@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{9df3fd20-deae-4bf2-88bf-82d05951bf2f}</ProjectGuid>
+    <MainSource>SCR.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>SCR.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG</DCC_Define>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1046</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName">Juliano Gomes</VersionInfoKeys><VersionInfoKeys Name="FileDescription">Sistema para classificação de resíduos em laboratório</VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName">SCR</VersionInfoKeys><VersionInfoKeys Name="LegalCopyright">Juliano Gomes</VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName">Sistema para classificação de resíduos em laboratório</VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">SCR.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="SCR.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="Units\CadastroPai\UCadPai.pas">
+      <Form>frmCadPai</Form>
+    </DCCReference>
+    <DCCReference Include="Units\Config\uConfig.pas">
+      <Form>frmConfig</Form>
+    </DCCReference>
+    <DCCReference Include="Units\ConsultaPai\UConsPai.pas">
+      <Form>frmConsPai</Form>
+    </DCCReference>
+    <DCCReference Include="Units\DM\Udm.pas">
+      <Form>DM</Form>
+    </DCCReference>
+    <DCCReference Include="Units\Empresas\UCadEmpr.pas">
+      <Form>frmCadEmpr</Form>
+    </DCCReference>
+    <DCCReference Include="Units\Empresas\UConsEmpr.pas">
+      <Form>frmConsEmpr</Form>
+    </DCCReference>
+    <DCCReference Include="Units\Funcoes\UFuncoes.pas" />
+    <DCCReference Include="Units\Laboratorio\Amostras\uCadAmostras.pas">
+      <Form>frmCadAmostras</Form>
+    </DCCReference>
+    <DCCReference Include="Units\Laboratorio\Amostras\uConsAmostras.pas">
+      <Form>frmConsAmostras</Form>
+    </DCCReference>
+    <DCCReference Include="Units\Laboratorio\Parametros\uCadParam.pas">
+      <Form>frmCadParam</Form>
+    </DCCReference>
+    <DCCReference Include="Units\Laboratorio\Parametros\uConsParam.pas">
+      <Form>frmConsParam</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\AnexoF\uCadRAnF.pas">
+      <Form>frmCadRAnF</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\AnexoF\uConsRAnF.pas">
+      <Form>frmConsRAnF</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\AnexoG\uCadRAnG.pas">
+      <Form>frmCadRAnG</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\AnexoG\uConsRAnG.pas">
+      <Form>frmConsRAnG</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\Atividades\UCadRAtv.pas">
+      <Form>frmCadRAtv</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\Atividades\UConsRAtv.pas">
+      <Form>frmConsRAtv</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\CaracteristicaDePericulosidade\UCadRCP.pas">
+      <Form>frmCadRCP</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\CaracteristicaDePericulosidade\UConsRCP.pas">
+      <Form>frmConsRCP</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\Classificacao\uCadClassificacao.pas">
+      <Form>frmCadClassificacao</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\Classificacao\uConsClassificacao.pas">
+      <Form>frmConsClassificacao</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\Classses\UCadRClas.pas">
+      <Form>frmCadRClas</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\Classses\UConsRClas.pas">
+      <Form>frmConsRClas</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\Descricao\uCadRDesc.pas">
+      <Form>frmCadRDesc</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\Descricao\uConsRDesc.pas">
+      <Form>frmConsRDesc</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\FontesGeradoras\UCadRFG.pas">
+      <Form>frmCadRFG</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\FontesGeradoras\UConsRFG.pas">
+      <Form>frmConsRFG</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\Residuos\uCadRRes.pas">
+      <Form>frmCadRRes</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\Residuos\uConsRRes.pas">
+      <Form>frmConsRRes</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\Substancias\uCadRSubs.pas">
+      <Form>frmCadRSubs</Form>
+    </DCCReference>
+    <DCCReference Include="Units\NBR10004\Substancias\uConsSubs.pas">
+      <Form>frmConsRSubs</Form>
+    </DCCReference>
+    <DCCReference Include="Units\Principal\UPrincipal.pas">
+      <Form>frmPrincipal</Form>
+    </DCCReference>
+    <DCCReference Include="Units\ProcessosGeradores\UCadProcG.pas">
+      <Form>frmCadProcG</Form>
+    </DCCReference>
+    <DCCReference Include="Units\ProcessosGeradores\UConsProcG.pas">
+      <Form>frmConsProcG</Form>
+    </DCCReference>
+    <DCCReference Include="Units\Sobre\uSobre.pas">
+      <Form>frmSobre</Form>
+    </DCCReference>
+  </ItemGroup>
+</Project>

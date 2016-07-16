@@ -1,0 +1,160 @@
+procedure TfrmClass2RRes.GetPreClassValue;
+var
+//http://www.experts-exchange.com/Programming/Languages/Pascal/Delphi/Q_20421786.html?qid=20421786
+ Doc: IHTMLDocument2;
+ I: Integer;
+ Element: OleVariant;
+ Elements: IHTMLElementCollection;
+
+ //check, Result          : boolean;
+ //ValueCheck,ValueResult : integer;
+ anexo                  : string;
+ 
+begin
+
+  Doc := Wb.Document as IHTMLDocument2;
+  Elements := Doc.All;
+
+      for I := 0 to Elements.length - 1 do
+      begin
+        Element := Elements.item(I, varEmpty);
+        if (UpperCase(Element.tagName) = 'INPUT') and (UpperCase(Element.Type) = 'RADIO') then
+        begin
+          if (Element.Checked = true) then
+          begin
+            //ShowMessage('RadioButton: ' + Element.value);
+            cdsResiduo.CancelUpdates;
+            cdsResiduo.Open;
+            cdsResiduo.insert;
+            cdsResiduoID.AsInteger := Element.value;
+            cdsResiduo.Post;
+          end;
+        end;
+      end;
+
+
+  //verifica se o resíduo é do anexo H
+  cdsResiduo.First;
+  DM.Conexao.Open;
+  try
+    with DM.cdsRRes do
+    begin
+      Close;
+      CommandText := 'select * from NBR10004_RES where ID = ' + QuotedStr(IntToStr(cdsResiduoID.AsInteger));
+      Open;
+    end;
+
+    with DM.cdsRDesc do
+    begin
+      Close;
+      CommandText := 'select * from NBR10004_DESC where ID = ' + QuotedStr(IntToStr(DM.cdsRResID_DESCRICAO.AsInteger));
+      Open;
+    end;
+    anexo   := UpperCase(DM.cdsRDescANEXO.AsString);
+  finally
+    DM.Conexao.Close;
+  end;
+
+  ShowMessage(anexo);
+
+{ if anexo = 'H' then
+ begin
+
+  { for I := 0 to Elements.length - 1 do
+   begin
+    Element := Elements.item(I, varEmpty);
+    if (UpperCase(Element.tagName) = 'INPUT') and (UpperCase(Element.Type) = 'RADIO') then
+    begin
+        if (Element.Checked = true) then
+        begin
+            //ShowMessage('RadioButton: ' + Element.value);
+            cdsResiduo.CancelUpdates;
+            cdsResiduo.Open;
+            cdsResiduo.insert;
+            cdsResiduoID.AsInteger := Element.value;
+            cdsResiduo.Post;
+        end;
+    end
+      else
+          if (UpperCase(Element.tagName) = 'INPUT') and (UpperCase(Element.Type) = 'CHECKBOX') then
+          begin
+              if (Element.Checked = true) then
+              begin
+                //ShowMessage('CheckBox: ' + Element.value);
+                check      := true;
+                ValueCheck := Element.Value;
+              end
+                else
+                  begin
+                    check := false;
+                  end;
+          end
+            else
+              // edit responável pelo resultado da substancia escolhida
+              if (UpperCase(Element.tagName) = 'INPUT') and (UpperCase(Element.Type) = 'TEXT') then
+              begin
+                if (Element.value <> '') then
+                begin
+                  //ShowMessage('edit: ' + Element.value);
+                  Result      := true;
+                  ValueResult := Numerico(Element.Value); // transforma a variavel em apenas numeros e virgula
+                end
+                  else
+                    begin
+                      Result := false;
+                    end;
+              end;
+
+          if (check = true) and (result = true) then
+          begin
+            cdsSubstancias.Open;
+            cdsSubstancias.Insert;
+            cdsSubstanciasID.AsInteger       := ValueCheck;
+            cdsSubstanciasResultado.AsString := ValueResult;
+            cdsSubstancias.Post;
+          end;
+
+          if (check = true) and (result = false) then
+          begin
+            Raise Exception.create('O campo "Resultado" é obrigatório para a(s) substância(s) escolhida(s).');
+
+            // todo: finalizar o loop aqui
+
+            cdsResiduo.CancelUpdates;
+            cdsSubstancias.CancelUpdates;
+          end;
+   end;  }
+{ end
+  else // caso o resíduo nao seja do anexo H
+    begin    
+
+      for I := 0 to Elements.length - 1 do
+      begin
+        Element := Elements.item(I, varEmpty);
+        if (UpperCase(Element.tagName) = 'INPUT') and (UpperCase(Element.Type) = 'RADIO') then
+        begin
+        if (Element.Checked = true) then
+        begin
+            //ShowMessage('RadioButton: ' + Element.value);
+            cdsResiduo.CancelUpdates;
+            cdsResiduo.Open;
+            cdsResiduo.insert;
+            cdsResiduoID.AsInteger := Element.value;
+            cdsResiduo.Post;
+        end;
+      end
+        else
+          if (UpperCase(Element.tagName) = 'INPUT') and (UpperCase(Element.Type) = 'CHECKBOX') then
+          begin
+              if (Element.Checked = true) then
+              begin
+                //ShowMessage('CheckBox: ' + Element.value);
+                cdsSubstancias.Open;
+                cdsSubstancias.Insert;
+                cdsSubstanciasID.AsInteger  := Element.value;
+                cdsSubstancias.Post;
+              end;
+          end;
+      end;
+    end;}
+end;
