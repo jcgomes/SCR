@@ -5,6 +5,6 @@
 
 # ATENÇÃO
 - Desenvolvido em Delphi, no ano de 2007/2008 (não lembro a versão do delphi).
-- Na época em que desenvolví o software, não teria ideia se iria disponibilizá-lo gratuitamente, então o software precisa de serial. Na pasta "Pre-requisitos" tem o aplicativo Keygen. Com elen você gera o serial. 
+- Na época em que desenvolví o software, não tinha ideia se iria disponibilizá-lo gratuitamente, então o software precisa de serial. Na pasta "Pre-requisitos" tem o aplicativo Keygen. Com elen você gera o serial. 
 - Este software é gratuito, é PROIBIDO comercializá-lo.
 
