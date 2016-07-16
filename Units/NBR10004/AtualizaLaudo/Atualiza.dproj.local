@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2007/12/28 19:27:22.687.pas,D:\Meus Documentos\RAD Studio\Projects\Unit1.pas=D:\Desenvolvimento\SCR\Units\NBR10004\AtualizaLaudo\UAtualizaLaudo.pas</Transaction>
+    <Transaction>2007/12/28 19:27:22.687.dfm,D:\Meus Documentos\RAD Studio\Projects\Unit1.dfm=D:\Desenvolvimento\SCR\Units\NBR10004\AtualizaLaudo\UAtualizaLaudo.dfm</Transaction>
+    <Transaction>2007/12/28 19:27:45.312.dproj,D:\Meus Documentos\RAD Studio\Projects\Project2.dproj=D:\Desenvolvimento\SCR\Units\NBR10004\AtualizaLaudo\Atualiza.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
